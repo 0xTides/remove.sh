@@ -7,9 +7,9 @@ APPS_PATH="/Applications"
 if [ -d "$APPS_PATH/Tunnelblick.app" ]; then
     # Remove Tunnelblick.app
     rm -rf "$APPS_PATH/Tunnelblick.app"
-    # Display a pop-up notification
-    runAsUser osascript -e 'display notification "Tunnelblick.app has been uninstalled." with title "Uninstall Complete"'
+    # Display a dialog box to the user
+    osascript -e 'tell application "System Events" to display dialog "Tunnelblick.app has been uninstalled." with title "Uninstall Complete" buttons {"OK"} default button 1'
 else
-    # Do not display a pop-up notification
-    echo "Tunnelblick.app was not found in the Applications folder."
+    # Display a dialog box to the user
+    osascript -e 'tell application "System Events" to display dialog "Tunnelblick.app was not found in the Applications folder." with title "Uninstall Complete" buttons {"OK"} default button 1'
 fi
