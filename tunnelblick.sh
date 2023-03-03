@@ -22,9 +22,6 @@ if [ -d "/Applications/Tunnelblick.app" ]; then
     sudo rm -rf "$HOME/Library/LaunchAgents/net.tunnelblick.tunnelblick.LaunchAtLogin.plist"
     sudo rm -rf "$HOME/Library/Logs/Tunnelblick.log"
     echo "Tunnelblick.app has been uninstalled."
-
-    # Notify the user that Tunnelblick has been uninstalled
-    osascript -e 'display notification "Tunnelblick has been uninstalled." with title "Tunnelblick Uninstall"'
 else
     echo "Tunnelblick.app not found."
 fi
